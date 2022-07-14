@@ -29,7 +29,7 @@ LABEL       org.opencontainers.image.licenses=MIT
 
 RUN         apk add --update --no-cache ca-certificates tzdata \
 				&& adduser -D -h /home/container container
-
+RUN apk add --no-cache libgcc libstdc++ curl ca-certificates
 USER        container
 ENV         USER=container HOME=/home/container
 WORKDIR     /home/container
